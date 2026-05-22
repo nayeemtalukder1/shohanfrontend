@@ -1,13 +1,12 @@
 import Image from "next/image";
+import Hero from "./components/Hero";
+import Stats from "./components/Stats";
 
-export default async function Page() {
-  const data = await fetch('https://shohanbackend.vercel.app/portfolio')
-  const posts = await data.json()
+export default function Home() {
   return (
-    <ul>
-      {posts.map((post) => (
-        <li key={post.id}>{post.title}</li>
-      ))}
-    </ul>
-  )
+    <>
+    <Hero />
+    <Stats />
+    </>
+  );
 }
