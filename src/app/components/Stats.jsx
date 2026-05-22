@@ -1,7 +1,12 @@
 // components/Stats.tsx
 
 export default async function Stats() {
-  const data = await fetch('https://shohanbackend.vercel.app/stats')
+  const data = await fetch(
+    "https://shohanbackend.vercel.app/stats",
+    {
+      cache: "no-store",
+    }
+  );
   const statsData = await data.json()
   return (
     <section className="py-10 bg-white/60">
